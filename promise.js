@@ -48,3 +48,25 @@ function Guvi(url, my_callback_function) {
 Guvi(url, Suman);
 
 // Code With Promise
+
+let my_promise = new Promise(function (resolve, reject) {
+  let request = new XMLHttpRequest();
+  request.open("GET", url);
+  request.onload = function () {
+    if (request.status == 200) {
+      resolve(request.responseText);
+    } else {
+      reject(request.status);
+    }
+  };
+  request.send();
+});
+
+my_promise.then(
+  function (value) {
+    Suman(value);
+  },
+  function (error) {
+    Suman(error);
+  }
+);
