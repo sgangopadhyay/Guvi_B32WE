@@ -70,3 +70,35 @@ my_promise.then(
     Suman(error);
   }
 );
+
+// PROMISE CHAINING
+
+let my_promise = new Promise(function (resolve, reject) {
+  let request = new XMLHttpRequest();
+  request.open("GET", url);
+  request.onload = function () {
+    if (request.status == 200) {
+      resolve(request.responseText);
+    } else {
+      reject(request.status);
+    }
+  };
+  request.send();
+});
+
+// Promise chaining 
+
+my_promise
+  .then(function (value) {
+    // success of promise
+    Suman(value);
+  })
+  .catch(function (error) {
+    // failure of promise
+    Suman(error);
+  })
+  .finally(function () {
+    // promise ran with and without success/failure
+    console.log("Promise ran successfully");
+  });
+
