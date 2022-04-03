@@ -35,6 +35,20 @@ let new_data = { name: "tanushree", location: "kolkata" };
 Guvi(new_data, Suman);
 
 
+// SIMPLE EXAMPLE
+
+async function Suman() {
+  let data = await "my name is suman";
+  console.log(data);
+}
+
+console.log("patna");
+Suman();
+console.log("bangalore");
+
+
+
+
 // Promise example
 
 let data = [
