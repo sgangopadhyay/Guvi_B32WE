@@ -34,29 +34,6 @@ let new_data = { name: "tanushree", location: "kolkata" };
 
 Guvi(new_data, Suman);
 
-// FETCH WITH ASYNC / AWAIT
-
-const url = "https://623d55e87efb5abea68ce31d.mockapi.io/suman/friends/";
-
-async function Suman(url) {
-  let data = await fetch(url);
-  if (data.ok) {
-    return data.json();
-  } else {
-    return data.status;
-  }
-}
-
-Suman(url)
-  .then(function (value) {
-    console.log(JSON.stringify(value));
-  })
-  .catch(function (error) {
-    console.log(error);
-  })
-  .finally(function () {
-    console.log("fetch() worked successfully !");
-  });
 
 
 // SIMPLE EXAMPLE
@@ -69,8 +46,6 @@ async function Suman() {
 console.log("patna");
 Suman();
 console.log("bangalore");
-
-
 
 
 // Promise example
@@ -151,4 +126,29 @@ async function India() {
 }
 
 India();
+
+
+// FETCH WITH ASYNC / AWAIT
+
+const url = "https://623d55e87efb5abea68ce31d.mockapi.io/suman/friends/";
+
+async function Suman(url) {
+  let data = await fetch(url);
+  if (data.ok) {
+    return data.json();
+  } else {
+    return data.status;
+  }
+}
+
+Suman(url)
+  .then(function (value) {
+    console.log(JSON.stringify(value));
+  })
+  .catch(function (error) {
+    console.log(error);
+  })
+  .finally(function () {
+    console.log("fetch() worked successfully !");
+  });
 
