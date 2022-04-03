@@ -65,4 +65,52 @@ function Guvi(info) {
 
 Guvi(new_data).then(Suman);
 
-//
+// async / await
+
+function Suman() {
+  console.log("suman gangopadhyay");
+}
+
+async function Guvi() {
+  console.log("this is the guvi function");
+}
+
+
+Guvi().then(function () {
+  Suman();
+});
+
+// ASYNC/AWAIT
+
+let data = [
+  { name: "suman gangopadhyay", location: "bangalore" },
+  { name: "nitin", location: "delhi" },
+];
+
+// display of the dictionary / hashmap
+function Suman() {
+  console.log(data);
+}
+
+function Guvi(info) {
+  return new Promise((resolve, reject) => {
+    setTimeout(function () {
+      data.push(info);
+      const error = false;
+      if (!error) {
+        resolve();
+      } else {
+        reject("error in your code !");
+      }
+    }, 4000);
+  });
+}
+
+async function India() {
+  let new_data = { name: "rahul", location: "shimla" };
+  await Guvi(new_data);
+  Suman();
+}
+
+India();
+
