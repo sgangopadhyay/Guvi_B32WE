@@ -48,3 +48,21 @@ fetch(url, {
   },
   body: JSON.stringify(data),
 })
+
+// UPDATE DATA into your MockAPI server using fetch API
+const data = {
+  first_name: "shalini",
+  last_name: "shukla",
+  location: "delhi",
+  image_url: "www.guvi.in",
+};
+
+const url_1 = "https://62511ff6977373573f448b61.mockapi.io/suman/friends/10";
+
+fetch(url_1, {
+  method: "PUT",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(data),
+});
