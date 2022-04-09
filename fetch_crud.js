@@ -34,6 +34,7 @@ fetch(url)
 
 // POST Data into Mock API Server
 
+
 const data = {
   first_name: "suman",
   last_name: "gangopadhyay",
@@ -65,4 +66,14 @@ fetch(url_1, {
     "Content-Type": "application/json",
   },
   body: JSON.stringify(data),
+});
+
+// DELETE data based on its ID
+
+fetch(url_1, {
+  method: "DELETE",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body:JSON.stringify({message:'data deleted !'})
 });
