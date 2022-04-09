@@ -31,3 +31,20 @@ suman_object
 fetch(url)
   .then((response) => response.json())
   .then((data) => console.log(JSON.stringify(data)));
+
+// POST Data into Mock API Server
+
+const data = {
+  first_name: "suman",
+  last_name: "gangopadhyay",
+  location: "bangalore",
+  image_url: "www.example.com",
+};
+
+fetch(url, {
+  method: "POST",
+  headers: {
+    "Content-Type": "application/json",
+  },
+  body: JSON.stringify(data),
+})
