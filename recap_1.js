@@ -42,4 +42,19 @@ suman_promise
     console.log(error);
   });
 
+// fetch ()
+
+"use strict";
+
+const url = "https://62513902977373573f4567fb.mockapi.io/pizza/pizza_names";
+
+const Suman = async () => {
+  const response = await fetch(url);
+  // await for the response to come 
+  const data = await response.json();
+  console.log(data);
+};
+
+Suman();
+
 
